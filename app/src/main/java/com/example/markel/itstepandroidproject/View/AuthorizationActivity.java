@@ -1,8 +1,11 @@
 package com.example.markel.itstepandroidproject.View;
 
 import android.content.Intent;
+import android.provider.MediaStore;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SwitchCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -24,7 +27,10 @@ public class AuthorizationActivity extends AppCompatActivity implements IAuthori
     private EditText mEditTextPassword;
     private Button mButtonEnter;
     private Button mButtonShare;
+    private Button mButtonImageCapture;
     private MaskedEditText mMaskedEditText;
+    private SwitchCompat mSwitchCompat;
+    private TextInputLayout mTextInputLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +50,10 @@ public class AuthorizationActivity extends AppCompatActivity implements IAuthori
         mEditTextPassword = (EditText) findViewById(R.id.edittext_authorizationactivity_password);
         mButtonEnter = (Button) findViewById(R.id.button_authorizationactivity_login);
         mButtonShare = (Button) findViewById(R.id.button_authorizationactivity_share);
+        mButtonImageCapture = (Button) findViewById(R.id.button_authorizationactivity_imagecapture);
         mMaskedEditText = (MaskedEditText) findViewById(R.id.maskededittext_authorizationactivity_fortest);
+        mSwitchCompat = (SwitchCompat) findViewById(R.id.switchcompat_authorizationactivity_switchmarkededittext);
+        mTextInputLayout = (TextInputLayout) findViewById(R.id.textinputlayout_authorizationactivity_fortest);
     }
 
     @Override
@@ -81,6 +90,8 @@ public class AuthorizationActivity extends AppCompatActivity implements IAuthori
 
         mButtonEnter.setOnClickListener(this);
         mButtonShare.setOnClickListener(this);
+        mButtonImageCapture.setOnClickListener(this);
+        mSwitchCompat.setOnClickListener(this);
     }
 
     @Override
@@ -91,6 +102,12 @@ public class AuthorizationActivity extends AppCompatActivity implements IAuthori
                 break;
             case R.id.button_authorizationactivity_share:
                 shareAction();
+                break;
+            case R.id.button_authorizationactivity_imagecapture:
+                imageCaptureAction();
+                break;
+            case R.id.switchcompat_authorizationactivity_switchmarkededittext:
+                changeMaskOnMaskedEditText();
                 break;
         }
     }
@@ -127,6 +144,26 @@ public class AuthorizationActivity extends AppCompatActivity implements IAuthori
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_SUBJECT, "TITLE");
         intent.putExtra(Intent.EXTRA_TEXT, "Message");
-        startActivity(Intent.createChooser(intent, "Поделиться"));
+        startActivity(Intent.createChooser(intent, getString(R.string.authorizationactivity_share)));
+    }
+
+    @Override
+    public void imageCaptureAction(){
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent, 1);
+    }
+
+    private void changeMaskOnMaskedEditText(){
+
+        mMaskedEditText.setText("");
+
+        if (!mSwitchCompat.isChecked()){
+            mMaskedEditText.setMask(getString(R.string.authorizationactivity_cardnumbermask));
+            mTextInputLayout.setHint(getString(R.string.authorizationactivity_cardnumbermask));
+        }
+        else{
+            mMaskedEditText.setMask(getString(R.string.authorizationactivity_phonemask));
+            mTextInputLayout.setHint(getString(R.string.authorizationactivity_phonemask));
+        }
     }
 }

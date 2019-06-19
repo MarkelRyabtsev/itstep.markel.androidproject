@@ -5,6 +5,7 @@ public interface IAuthorizationView extends IView {
     void showLoginMessageToast(AuthorizationResult result);
     void transitionSecondActivity();
     void shareAction();
+    void imageCaptureAction();
 
     enum AuthorizationResult{
         NoError,

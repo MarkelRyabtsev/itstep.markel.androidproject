@@ -18,7 +18,14 @@
             android:layout_below="@+id/progressbar_authorizationactivity_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+        <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switchcompat_authorizationactivity_switchmarkededittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="50dp"/>
 
         <android.support.design.widget.TextInputLayout
                 android:id="@+id/textinputlayout_authorizationactivity_fortest"
@@ -31,20 +38,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="35dp"
-                    android:layout_marginStart="50dp"
                     android:layout_marginEnd="50dp"
-                    app:mask="+7 (###) ###-##-##"
-                    android:hint="+7 (###) ###-##-##"
+                    app:mask="@string/authorizationactivity_cardnumbermask"
+                    android:hint="@string/authorizationactivity_cardnumbermask"
                     android:inputType="number"
-                    android:gravity="center"
+                    android:gravity="center_horizontal"
                     android:textColorHint="@color/authorizationactivity_hintcolor_blue"
-                    android:textSize="18dp"/>
+                    android:textSize="18sp"/>
 
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.v7.widget.SwitchCompat
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+
 
     </LinearLayout>
 
@@ -66,7 +70,7 @@
                 android:hint="@string/authorizationactivity_login"
                 android:maxLines="1"
                 android:textColorHint="@color/authorizationactivity_hintcolor_blue"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -86,7 +90,7 @@
             android:hint="@string/authorizationactivity_password"
             android:maxLines="1"
             android:textColorHint="@color/authorizationactivity_hintcolor_blue"
-            android:textSize="18dp"/>
+            android:textSize="18sp"/>
     </android.support.design.widget.TextInputLayout>
 
     <Button
@@ -100,7 +104,7 @@
             android:background="@color/authorizationactivity_hintcolor_blue"
             android:textColor="@android:color/white"
             android:layout_below="@+id/textinputlayout_authorizationactivity_password"
-            android:textSize="18dp"/>
+            android:textSize="18sp"/>
 
     <Button
             android:id="@+id/button_authorizationactivity_share"
@@ -113,6 +117,19 @@
             android:background="@color/authorizationactivity_hintcolor_blue"
             android:textColor="@android:color/white"
             android:layout_below="@+id/button_authorizationactivity_login"
-            android:textSize="18dp"/>
+            android:textSize="18sp"/>
+
+    <Button
+            android:id="@+id/button_authorizationactivity_imagecapture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:text="@string/authorizationactivity_runcamera"
+            android:background="@color/authorizationactivity_hintcolor_blue"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/button_authorizationactivity_share"
+            android:textSize="18sp"/>
 
 </RelativeLayout>

@@ -8,5 +8,8 @@
     <string name="authorizationactivity_success">Вы успешно авторизовались!</string>
     <string name="authorizationactivity_wronglogin">Неверный логин!</string>
     <string name="authorizationactivity_wrongpassword">Неверный пароль!</string>
+    <string name="authorizationactivity_phonemask">+7 (###) ###-##-##</string>
+    <string name="authorizationactivity_cardnumbermask">####-####-####-####</string>
+    <string name="authorizationactivity_runcamera">Открыть камеру</string>
     <!--CommonStrings-->
 </resources>
