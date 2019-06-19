@@ -13,6 +13,7 @@ import com.example.markel.itstepandroidproject.Contracts.IAuthorizationView;
 import com.example.markel.itstepandroidproject.Contracts.IView;
 import com.example.markel.itstepandroidproject.Presenters.AuthorizationActivityPresenter;
 import com.example.markel.itstepandroidproject.R;
+import com.vicmikhailau.maskededittext.MaskedEditText;
 
 import static com.example.markel.itstepandroidproject.Contracts.IAuthorizationView.AuthorizationResult.NoError;
 
@@ -23,6 +24,7 @@ public class AuthorizationActivity extends AppCompatActivity implements IAuthori
     private EditText mEditTextPassword;
     private Button mButtonEnter;
     private Button mButtonShare;
+    private MaskedEditText mMaskedEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,7 @@ public class AuthorizationActivity extends AppCompatActivity implements IAuthori
         mEditTextPassword = (EditText) findViewById(R.id.edittext_authorizationactivity_password);
         mButtonEnter = (Button) findViewById(R.id.button_authorizationactivity_login);
         mButtonShare = (Button) findViewById(R.id.button_authorizationactivity_share);
+        mMaskedEditText = (MaskedEditText) findViewById(R.id.maskededittext_authorizationactivity_fortest);
     }
 
     @Override
