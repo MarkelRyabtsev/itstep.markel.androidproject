@@ -4,6 +4,7 @@
     <string name="authorizationactivity_login">Логин</string>
     <string name="authorizationactivity_password">Пароль</string>
     <string name="authorizationactivity_enter">Войти</string>
+    <string name="authorizationactivity_share">Поделиться</string>
     <string name="authorizationactivity_success">Вы успешно авторизовались!</string>
     <string name="authorizationactivity_wronglogin">Неверный логин!</string>
     <string name="authorizationactivity_wrongpassword">Неверный пароль!</string>
