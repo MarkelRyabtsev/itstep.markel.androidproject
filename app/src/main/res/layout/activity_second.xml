@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:animateLayoutChanges="true"
         tools:context=".View.SecondActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <Switch
+            android:id="@+id/switch_secondactivity_hideviews"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:theme="@style/SwitchStyle"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/checkbox_secondactivity_denyhide"
+            android:layout_below="@+id/switch_secondactivity_hideviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/CheckboxStyle"/>
+
+    <RadioGroup
+            android:id="@+id/radiogroup_secondactivity_textchooser"
+            android:layout_below="@+id/checkbox_secondactivity_denyhide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+        <android.support.v7.widget.AppCompatRadioButton
+                android:id="@+id/radiobutton_secondactivity_happytext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/secondactivity_happytext"
+                android:textColor="@color/color_blue_project"
+                android:theme="@style/RadioButtonStyle"/>
+        <RadioButton
+                android:id="@+id/radiobutton_secondactivity_sadtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/secondactivity_sadtext"
+                android:textColor="@color/color_blue_project"
+                android:theme="@style/RadioButtonStyle"/>
+        <RadioButton
+                android:id="@+id/radiobutton_secondactivity_glorytext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/secondactivity_glorytext"
+                android:textColor="@color/color_blue_project"
+                android:theme="@style/RadioButtonStyle"/>
+    </RadioGroup>
+
+    <TextView
+            android:id="@+id/textview_secondactivity_presentationtext"
+            android:layout_below="@+id/radiogroup_secondactivity_textchooser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/secondactivity_textviewhint"
+            android:text=""
+            android:textColor="@color/color_blue_project"
+            android:textColorHint="@color/color_blue_project"
+            android:layout_marginTop="10dp"/>
+
+</RelativeLayout>

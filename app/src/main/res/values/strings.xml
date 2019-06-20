@@ -11,5 +11,10 @@
     <string name="authorizationactivity_phonemask">+7 (###) ###-##-##</string>
     <string name="authorizationactivity_cardnumbermask">####-####-####-####</string>
     <string name="authorizationactivity_runcamera">Открыть камеру</string>
+    <!--SecondActivity-->
+    <string name="secondactivity_happytext">Happy Text</string>
+    <string name="secondactivity_sadtext">Sad Text</string>
+    <string name="secondactivity_glorytext">Glory Text</string>
+    <string name="secondactivity_textviewhint">Text will be displayed here!</string>
     <!--CommonStrings-->
 </resources>
