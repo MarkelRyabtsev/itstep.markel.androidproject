@@ -140,17 +140,17 @@ public class AuthorizationActivity extends AppCompatActivity implements IAuthori
 
     @Override
     public void shareAction(){
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_SUBJECT, "TITLE");
-        intent.putExtra(Intent.EXTRA_TEXT, "Message");
-        startActivity(Intent.createChooser(intent, getString(R.string.authorizationactivity_share)));
+        Intent mIntentShareAction = new Intent(Intent.ACTION_SEND);
+        mIntentShareAction.setType("text/plain");
+        mIntentShareAction.putExtra(Intent.EXTRA_SUBJECT, "TITLE");
+        mIntentShareAction.putExtra(Intent.EXTRA_TEXT, "Message");
+        startActivity(Intent.createChooser(mIntentShareAction, getString(R.string.authorizationactivity_share)));
     }
 
     @Override
     public void imageCaptureAction(){
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent, 1);
+        Intent mIntentCameraAction = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(mIntentCameraAction, 1);
     }
 
     private void changeMaskOnMaskedEditText(){

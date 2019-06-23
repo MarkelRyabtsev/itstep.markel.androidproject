@@ -100,7 +100,7 @@
             android:layout_marginTop="35dp"
             android:layout_marginStart="80dp"
             android:layout_marginEnd="80dp"
-            android:text="@string/authorizationactivity_enter"
+            android:text="@string/common_enter"
             android:background="@color/color_blue_project"
             android:textColor="@color/color_white_project"
             android:layout_below="@+id/textinputlayout_authorizationactivity_password"

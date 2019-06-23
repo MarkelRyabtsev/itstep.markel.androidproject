@@ -3,7 +3,6 @@
     <!--AuthorizationActivity-->
     <string name="authorizationactivity_login">Логин</string>
     <string name="authorizationactivity_password">Пароль</string>
-    <string name="authorizationactivity_enter">Войти</string>
     <string name="authorizationactivity_share">Поделиться</string>
     <string name="authorizationactivity_success">Вы успешно авторизовались!</string>
     <string name="authorizationactivity_wronglogin">Неверный логин!</string>
@@ -12,9 +11,9 @@
     <string name="authorizationactivity_cardnumbermask">####-####-####-####</string>
     <string name="authorizationactivity_runcamera">Открыть камеру</string>
     <!--SecondActivity-->
-    <string name="secondactivity_happytext">Happy Text</string>
-    <string name="secondactivity_sadtext">Sad Text</string>
-    <string name="secondactivity_glorytext">Glory Text</string>
-    <string name="secondactivity_textviewhint">Text will be displayed here!</string>
+    <string name="secondactivity_authorizationactivity">Окно авторизации</string>
+    <string name="secondactivity_imageactivity">Окно с изображением</string>
     <!--CommonStrings-->
+    <string name="common_enter">Войти</string>
+    <string name="common_confirm">Подтвердить</string>
 </resources>

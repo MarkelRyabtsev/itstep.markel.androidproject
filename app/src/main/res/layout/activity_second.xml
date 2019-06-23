@@ -10,7 +10,58 @@
         android:animateLayoutChanges="true"
         tools:context=".View.SecondActivity">
 
-    <Switch
+    <LinearLayout
+            android:id="@+id/linearlayout_secondactivity_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50dp">
+
+        <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switchcompat_secondactivity_switchinputtypetext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"/>
+
+        <EditText
+                android:id="@+id/edittext_secondactivity_edittextwithinputtype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        android:inputType="text"/>
+
+    </LinearLayout>
+
+    <RadioGroup
+            android:id="@+id/radiogroup_secondactivity_activitychooser"
+            android:layout_below="@+id/linearlayout_secondactivity_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/secondactivity_authorizationactivity"/>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/secondactivity_imageactivity"/>
+
+    </RadioGroup>
+
+    <Button android:id="@+id/button_secondnactivity_enter"
+            android:layout_below="@+id/radiogroup_secondactivity_activitychooser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp"
+            android:text="@string/common_enter"
+            android:background="@color/color_blue_project"
+            android:textColor="@color/color_white_project"
+            android:textSize="18sp"/>
+
+    <!--<Switch
             android:id="@+id/switch_secondactivity_hideviews"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
@@ -64,6 +115,6 @@
             android:text=""
             android:textColor="@color/color_blue_project"
             android:textColorHint="@color/color_blue_project"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"/>-->
 
 </RelativeLayout>
