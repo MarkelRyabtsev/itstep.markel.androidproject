@@ -2,6 +2,7 @@ package com.example.markel.itstepandroidproject.View;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -9,14 +10,15 @@ import android.widget.*;
 import com.example.markel.itstepandroidproject.Contracts.ISecondView;
 import com.example.markel.itstepandroidproject.R;
 
-public class SecondActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener,
-        ISecondView,
-        RadioGroup.OnCheckedChangeListener {
+public class SecondActivity extends AppCompatActivity implements ISecondView,
+        CompoundButton.OnCheckedChangeListener,
+        RadioGroup.OnCheckedChangeListener,
+        View.OnClickListener{
 
-    Switch mSwitchChangeVisibility;
-    CheckBox mCheckBoxTextViewVisibility;
-    RadioGroup mRadioGroupTextOption;
-    TextView mTextViewTextPresentation;
+    Switch mSwitchChangeEditTextInputType;
+    EditText mEditTextСhangeableEditText;
+    RadioGroup mRadioGroupEnterOptions;
+    Button mButtonEnter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,78 +32,56 @@ public class SecondActivity extends AppCompatActivity implements CompoundButton.
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         switch (buttonView.getId()){
-            case R.id.switch_secondactivity_hideviews:
-                startAnimation(isChecked);
-                changeViewsVisibility(isChecked);
+            case R.id.switchcompat_secondactivity_switchinputtypetext:
+                changeInputType(isChecked);
                 break;
         }
     }
 
     @Override
     public void initViews() {
-        mSwitchChangeVisibility = (Switch) findViewById(R.id.switch_secondactivity_hideviews);
-        mCheckBoxTextViewVisibility = (CheckBox) findViewById(R.id.checkbox_secondactivity_denyhide);
-        mRadioGroupTextOption = (RadioGroup) findViewById(R.id.radiogroup_secondactivity_textchooser);
-        mTextViewTextPresentation = (TextView) findViewById(R.id.textview_secondactivity_presentationtext);
+        mSwitchChangeEditTextInputType = (Switch) findViewById(R.id.switchcompat_secondactivity_switchinputtypetext);
+        mEditTextСhangeableEditText = (EditText) findViewById(R.id.edittext_secondactivity_edittextwithinputtype);
+        mRadioGroupEnterOptions = (RadioGroup) findViewById(R.id.radiogroup_secondactivity_activitychooser);
+        mButtonEnter = (Button) findViewById(R.id.button_secondnactivity_enter);
     }
 
     @Override
     public void initListeners() {
-        mSwitchChangeVisibility.setOnCheckedChangeListener(this);
-        mCheckBoxTextViewVisibility.setOnCheckedChangeListener(this);
-        mRadioGroupTextOption.setOnCheckedChangeListener(this);
+        mSwitchChangeEditTextInputType.setOnCheckedChangeListener(this);
+        mRadioGroupEnterOptions.setOnCheckedChangeListener(this);
+        mButtonEnter.setOnClickListener(this);
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId){
-            case R.id.radiobutton_secondactivity_happytext:
-                mTextViewTextPresentation.setText(getString(R.string.secondactivity_happytext));
+            case R.id.radiobutton_secondactivity_gotoauthorizationactivity:
+                // todo
                 break;
-            case R.id.radiobutton_secondactivity_sadtext:
-                mTextViewTextPresentation.setText(getString(R.string.secondactivity_sadtext));
-                break;
-            case R.id.radiobutton_secondactivity_glorytext:
-                mTextViewTextPresentation.setText(getString(R.string.secondactivity_glorytext));
+            case R.id.radiobutton_secondactivity_gotoimageactivity:
+                // todo
                 break;
         }
     }
 
-    @Override
-    public Animation initAnimation(final boolean isChecked) {
-        Animation goneAnimation = AnimationUtils.loadAnimation(this, R.anim.alpha_gone);
-        goneAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-                changeViewsVisibility(isChecked);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-            }
-        });
-        return goneAnimation;
-    }
-
-    @Override
-    public void startAnimation(boolean isChecked) {
-        mRadioGroupTextOption.startAnimation(initAnimation(isChecked));
-    }
-
-    private void changeViewsVisibility(boolean isChecked){
+    private void changeInputType(boolean isChecked){
 
         if (!isChecked) {
-            if(mCheckBoxTextViewVisibility.isChecked()) return;
-            mRadioGroupTextOption.setVisibility(View.VISIBLE);
-            mCheckBoxTextViewVisibility.setVisibility(View.VISIBLE);
+            mEditTextСhangeableEditText.setText("");
+            mEditTextСhangeableEditText.setInputType(InputType.TYPE_TEXT_VARIATION_NORMAL);
         } else {
-            if(mCheckBoxTextViewVisibility.isChecked()) return;
-            mRadioGroupTextOption.setVisibility(View.GONE);
-            mCheckBoxTextViewVisibility.setVisibility(View.GONE);
+            mEditTextСhangeableEditText.setText("");
+            mEditTextСhangeableEditText.setInputType(InputType.TYPE_NUMBER_VARIATION_NORMAL);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.button_authorizationactivity_login:
+                // todo
+                break;
         }
     }
 }
