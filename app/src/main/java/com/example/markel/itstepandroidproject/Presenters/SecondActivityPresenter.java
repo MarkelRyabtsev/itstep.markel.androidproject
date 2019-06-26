@@ -2,7 +2,7 @@ package com.example.markel.itstepandroidproject.Presenters;
 
 import com.example.markel.itstepandroidproject.Contracts.ISecondView;
 import com.example.markel.itstepandroidproject.Contracts.IView;
-import com.example.markel.itstepandroidproject.View.AuthorizationActivity;
+import com.example.markel.itstepandroidproject.View.*;
 
 public class SecondActivityPresenter implements IPresenter {
 
@@ -19,14 +19,22 @@ public class SecondActivityPresenter implements IPresenter {
 
     public void transitionActivityHandler(IView.MyActivities choosedActivity) {
 
-        try {
+        if (view == null) return;
+        Class activityClass = null;
 
-            if (view != null) view.transitionActivityAction(Class.forName(choosedActivity.name()));
-            else view.transitionActivityAction(AuthorizationActivity.class);
-
+        switch (choosedActivity) {
+            case AuthorizationActivity:
+                activityClass = AuthorizationActivity.class;
+                break;
+            case SecondActivity:
+                activityClass = SecondActivity.class;
+                break;
+            case ImageActivity:
+                activityClass = ImageActivity.class;
+                break;
+            default:
+                break;
         }
-        catch (ClassNotFoundException e){
-            //todo log
-        }
+        view.transitionActivityAction(activityClass);
     }
 }

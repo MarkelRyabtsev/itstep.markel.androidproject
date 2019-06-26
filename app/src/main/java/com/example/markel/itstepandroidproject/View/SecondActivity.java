@@ -88,16 +88,14 @@ public class SecondActivity extends AppCompatActivity implements ISecondView,
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_secondnactivity_enter:
-                //presenter.transitionActivityHandler(choosedActivity);
-                Intent intent = new Intent(this, AuthorizationActivity.class);
-                startActivity(intent);
+                presenter.transitionActivityHandler(choosedActivity);
                 break;
         }
     }
 
     @Override
     public void transitionActivityAction(Class activity) {
-        Intent intent = new Intent(this, activity.getClass());
+        Intent intent = new Intent(this, activity);
         startActivity(intent);
     }
 }
