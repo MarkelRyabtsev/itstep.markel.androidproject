@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginTop="20dp"
-            android:tint="@color/color_blue_project"
+
             android:scaleType="centerCrop"/>
 
 </RelativeLayout>

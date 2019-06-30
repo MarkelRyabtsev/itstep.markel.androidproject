@@ -40,6 +40,12 @@ public class AuthorizationActivity extends AppCompatActivity implements IAuthori
         initViews();
         initListeners();
 
+        Bundle extras = getIntent().getExtras();
+        if (extras != null){
+            mEditTextLogin.setText(extras.getString("login"));
+            mEditTextPassword.setText(extras.getString("password"));
+        }
+
         presenter.initUI();
     }
 

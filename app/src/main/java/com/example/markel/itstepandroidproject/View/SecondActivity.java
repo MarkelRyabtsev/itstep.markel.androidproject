@@ -96,6 +96,13 @@ public class SecondActivity extends AppCompatActivity implements ISecondView,
     @Override
     public void transitionActivityAction(Class activity) {
         Intent intent = new Intent(this, activity);
+        if (choosedActivity == MyActivities.AuthorizationActivity){
+            Bundle extras = new Bundle();
+            extras.putString("login", "admin");
+            extras.putString("password", "admin");
+            intent.putExtras(extras);
+        }
+
         startActivity(intent);
     }
 }
