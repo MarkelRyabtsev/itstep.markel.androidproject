@@ -21,7 +21,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public int getLayout(){
-        return R.layout.activity_base;
+        return 0;//R.layout.activity_base;
     }
 
     public abstract BaseFragment onInitFragment();
@@ -40,7 +40,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void displayFragment(BaseFragment baseFragment){
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        /*FragmentManager fragmentManager = getSupportFragmentManager();
 
         if(fragmentManager.getBackStackEntryCount() > 0 && getCurrentFragment() != null){
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -51,7 +51,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
             fragmentTransaction.add(R.layout.base_fragment_container, baseFragment, baseFragment.getFragmentTag());
             fragmentTransaction.commit();
-        }
+        }*/
     }
 
     private BaseFragment getCurrentFragment(){

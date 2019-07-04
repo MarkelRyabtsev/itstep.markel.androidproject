@@ -4,16 +4,22 @@ import android.bluetooth.BluetoothAdapter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import com.example.markel.itstepandroidproject.View.StateActivity;
 
 public class BluetoothStateReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
+
+        Intent intentTransition = new Intent(context, StateActivity.class);
+
         if(isBluetoothAvailable()){
-            context.sendBroadcast(new Intent("BLUETOOTH_ENABLE"));
+            intentTransition.putExtra("message", "Positive");
         }
         else{
-            context.sendBroadcast(new Intent("BLUETOOTH_DISABLE"));
+            intentTransition.putExtra("message", "Negative");
         }
+
+        context.startActivity(intentTransition);
     }
 
     private boolean isBluetoothAvailable() {

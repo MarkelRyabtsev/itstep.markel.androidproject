@@ -1,7 +1,12 @@
 package com.example.markel.itstepandroidproject.View;
 
+import android.bluetooth.BluetoothAdapter;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.ConnectivityManager;
+import android.net.Network;
 import android.provider.MediaStore;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -110,8 +115,15 @@ public class AuthorizationActivity extends AppCompatActivity implements IAuthori
         mBluetoothStateReceiver = new BluetoothStateReceiver();
         mNetworkStateReceiver = new NetworkStateReceiver();
 
-        registerReceiver(mBluetoothStateReceiver, new IntentFilter());
-        registerReceiver(mNetworkStateReceiver, new IntentFilter());
+        IntentFilter bluetoothIntentFilter = new IntentFilter("ACTION");
+        //bluetoothIntentFilter.addAction(BluetoothAdapter.);
+
+        IntentFilter networkIntentFilter = new IntentFilter("ACTION");
+        //networkIntentFilter.addAction("");
+
+
+        registerReceiver(mBluetoothStateReceiver, bluetoothIntentFilter);
+        registerReceiver(mNetworkStateReceiver, networkIntentFilter);
     }
 
     @Override

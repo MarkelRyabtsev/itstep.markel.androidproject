@@ -5,17 +5,24 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import com.example.markel.itstepandroidproject.View.AuthorizationActivity;
+import com.example.markel.itstepandroidproject.View.StateActivity;
 
 public class NetworkStateReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        if(isNetworkAvailable(context)){
-            context.sendBroadcast(new Intent("NETWORK_ENABLE"));
+        Intent intentTransition;
+
+        if(!isNetworkAvailable(context)){
+            intentTransition = new Intent(context, StateActivity.class);
+            intentTransition.putExtra("message", "Нет интернет соединения");
         }
         else{
-            context.sendBroadcast(new Intent("NETWORK_DISABLE"));
+            intentTransition = new Intent(context, AuthorizationActivity.class);
         }
+
+        context.startActivity(intentTransition);
     }
 
     boolean isNetworkAvailable(Context context) {
