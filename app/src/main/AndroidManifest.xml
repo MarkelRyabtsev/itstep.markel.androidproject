@@ -35,14 +35,15 @@
         <activity android:name=".View.StateActivity">
         </activity>
         <activity android:name=".View.SecondActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".View.AuthorizationActivity">
+        </activity>
+        <activity android:name=".View.ListActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
